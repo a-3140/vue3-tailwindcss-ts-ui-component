@@ -1,18 +1,3 @@
-<script setup lang="ts">
-import { classNames } from "../../utils";
-
-defineProps<{
-  label: string;
-  type: "primary" | "secondary";
-  classes: string;
-  clickHandler: () => void;
-}>();
-
-const primary = "text-white bg-lochinvar-700 hover:bg-lochinvar-800";
-const secondary =
-  "text-black bg-white hover:bg-gray-100 border-gray-300 border";
-</script>
-
 <template>
   <button
     @click="clickHandler"
@@ -27,3 +12,25 @@ const secondary =
     {{ label }}
   </button>
 </template>
+
+<script lang="ts">
+defineComponent({
+  name: "TheButton",
+});
+</script>
+
+<script setup lang="ts">
+import { defineComponent } from "vue";
+import { classNames } from "../../utils";
+
+defineProps<{
+  label: string;
+  type: "primary" | "secondary";
+  classes: string;
+  clickHandler: () => void;
+}>();
+
+const primary = "text-white bg-lochinvar-700 hover:bg-lochinvar-800";
+const secondary =
+  "text-black bg-white hover:bg-gray-100 border-gray-300 border";
+</script>
